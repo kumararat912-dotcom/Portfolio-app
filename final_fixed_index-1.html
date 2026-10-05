@@ -1,0 +1,5467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+
+<title>Only My Portfolio Journey</title>
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root{
+    --bg:#06101c;
+    --bg2:#091827;
+    --card:#0d1c2d;
+    --card2:#10243a;
+    --border:#203d57;
+    --text:#f1f7ff;
+    --muted:#91a7bc;
+    --green:#19c37d;
+    --green2:#0c704c;
+    --blue:#43a7ff;
+    --purple:#9a70ff;
+    --orange:#f2a93b;
+    --red:#ef5268;
+    --yellow:#e6b83d;
+    --shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(33,102,145,.22),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            var(--bg),
+            var(--bg2)
+        );
+    color:var(--text);
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.hidden{
+    display:none!important;
+}
+
+.muted{
+    color:var(--muted);
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-screen{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.login-card{
+    width:100%;
+    max-width:440px;
+    padding:32px;
+    border:1px solid var(--border);
+    border-radius:25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,39,60,.98),
+            rgba(7,19,31,.98)
+        );
+    box-shadow:var(--shadow);
+    text-align:center;
+}
+
+.logo{
+    width:75px;
+    height:75px;
+    margin:0 auto 18px;
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--blue)
+        );
+    font-size:35px;
+}
+
+.login-card h1{
+    margin:0;
+    font-size:25px;
+}
+
+.login-card p{
+    color:var(--muted);
+}
+
+.login-note{
+    margin-top:18px;
+    padding:11px;
+    border-radius:11px;
+    background:#0a2134;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.message{
+    min-height:18px;
+    color:#ff9eac;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.input-group{
+    text-align:left;
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border-radius:11px;
+    border:1px solid #294760;
+    background:#061321;
+    color:var(--text);
+    outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:var(--blue);
+    box-shadow:
+        0 0 0 3px
+        rgba(67,167,255,.12);
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn{
+    border:0;
+    padding:11px 15px;
+    border-radius:11px;
+    font-weight:800;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.08);
+}
+
+.primary{
+    background:var(--green);
+    color:#03130d;
+}
+
+.secondary{
+    background:#17334c;
+    color:white;
+}
+
+.danger{
+    background:#74253a;
+    color:white;
+}
+
+.warning{
+    background:#715914;
+    color:white;
+}
+
+.full{
+    width:100%;
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.app{
+    min-height:100vh;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topbar{
+    max-width:1250px;
+    margin:auto;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.brand-icon{
+    width:50px;
+    height:50px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            var(--green),
+            var(--blue)
+        );
+    font-size:25px;
+}
+
+.brand h1{
+    margin:0;
+    font-size:22px;
+}
+
+.brand p{
+    margin:3px 0 0;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.user-email{
+    color:var(--muted);
+    font-size:12px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    padding:0 20px 18px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.nav-btn{
+    border:0;
+    border-radius:10px;
+    padding:10px 14px;
+    background:#10263b;
+    color:#d8e7f4;
+    font-weight:700;
+}
+
+.nav-btn.active{
+    background:var(--green);
+    color:#03130d;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main{
+    max-width:1250px;
+    margin:auto;
+    padding:0 20px 50px;
+}
+
+.page{
+    animation:fade .25s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(5px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:
+        repeat(5,1fr);
+    gap:12px;
+}
+
+.stat{
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:17px;
+    background:
+        linear-gradient(
+            145deg,
+            #0e2032,
+            #091624
+        );
+}
+
+.stat-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.stat-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.stat small{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.stat strong{
+    display:block;
+    margin-top:6px;
+    font-size:21px;
+}
+
+.green-bg{
+    background:#0b4d38;
+}
+
+.blue-bg{
+    background:#123e63;
+}
+
+.purple-bg{
+    background:#382666;
+}
+
+.orange-bg{
+    background:#664719;
+}
+
+.red-bg{
+    background:#65243a;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card{
+    margin-top:15px;
+    padding:20px;
+    border-radius:19px;
+    border:1px solid var(--border);
+    background:
+        linear-gradient(
+            145deg,
+            #0e1f31,
+            #091624
+        );
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.22);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:18px;
+}
+
+.card-header h2{
+    margin:0;
+    font-size:19px;
+}
+
+.card-header p{
+    margin:5px 0 0;
+    color:var(--muted);
+    font-size:12px;
+}
+
+.badge{
+    padding:7px 10px;
+    border-radius:99px;
+    background:#0a4d38;
+    color:#75efbb;
+    font-size:11px;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   ALLOCATION
+========================================================= */
+
+.allocation-row{
+    margin:17px 0;
+}
+
+.allocation-head{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+}
+
+.allocation-head span:last-child{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.progress{
+    height:10px;
+    border-radius:99px;
+    background:#112b40;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    border-radius:99px;
+    background:
+        linear-gradient(
+            90deg,
+            var(--green),
+            var(--blue)
+        );
+}
+
+
+/* =========================================================
+   HOLDINGS
+========================================================= */
+
+.holdings{
+    display:grid;
+    grid-template-columns:
+        repeat(5,1fr);
+    gap:12px;
+}
+
+.holding{
+    padding:15px;
+    border:1px solid #1e3a52;
+    border-radius:15px;
+    background:#0a1c2d;
+    transition:.2s;
+}
+
+.holding:hover{
+    transform:translateY(-3px);
+    border-color:#37617d;
+}
+
+.holding-top{
+    display:flex;
+    justify-content:space-between;
+    gap:5px;
+}
+
+.stock-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            #193b57,
+            #102439
+        );
+    font-size:11px;
+    font-weight:900;
+}
+
+.holding h3{
+    margin:12px 0 3px;
+    font-size:14px;
+}
+
+.holding p{
+    margin:0;
+    color:var(--muted);
+    font-size:11px;
+}
+
+.tag{
+    height:fit-content;
+    padding:4px 7px;
+    border-radius:99px;
+    font-size:9px;
+    font-weight:900;
+}
+
+.tag-green{
+    background:#123f32;
+    color:#77eabd;
+}
+
+.tag-blue{
+    background:#153b5d;
+    color:#81c7ff;
+}
+
+
+/* =========================================================
+   DISCIPLINE
+========================================================= */
+
+.discipline{
+    display:grid;
+    grid-template-columns:
+        repeat(4,1fr);
+    gap:12px;
+}
+
+.discipline-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    border-radius:14px;
+    background:#0a1d2e;
+}
+
+.discipline-item span{
+    font-size:25px;
+}
+
+.discipline-item strong{
+    font-size:13px;
+}
+
+.discipline-item p{
+    margin:3px 0 0;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+    gap:13px;
+}
+
+.preview{
+    margin:18px 0;
+    padding:16px;
+    border-radius:13px;
+    background:#0a2134;
+    display:flex;
+    justify-content:space-between;
+}
+
+.preview strong{
+    color:var(--green);
+    font-size:20px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters{
+    display:grid;
+    grid-template-columns:
+        repeat(4,1fr);
+    gap:10px;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrap{
+    overflow:auto;
+    margin-top:15px;
+}
+
+table{
+    width:100%;
+    min-width:900px;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    padding:11px;
+    text-align:left;
+    border-bottom:1px solid #1b3448;
+    font-size:12px;
+}
+
+th{
+    color:#9fb6cb;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 8px;
+    border-radius:99px;
+    font-size:9px;
+    font-weight:900;
+}
+
+.status-add{
+    background:#0b6243;
+}
+
+.status-hold{
+    background:#164d80;
+}
+
+.status-caution{
+    background:#735b10;
+}
+
+.status-wait{
+    background:#4c5661;
+}
+
+.status-review{
+    background:#84253b;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.notification-box{
+    padding:15px;
+    border-radius:14px;
+    background:#0a1d2e;
+    margin-top:12px;
+    border:1px solid #1b374e;
+}
+
+.notification-date{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.notification-text{
+    white-space:pre-wrap;
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   DIVIDENDS
+========================================================= */
+
+.dividend-summary{
+    display:grid;
+    grid-template-columns:
+        repeat(3,1fr);
+    gap:12px;
+}
+
+.dividend-card{
+    padding:17px;
+    border-radius:14px;
+    background:#0a1e30;
+    border:1px solid #1d3a51;
+}
+
+.dividend-card strong{
+    display:block;
+    font-size:21px;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+.setting{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px;
+    background:#0a1d2e;
+    border-radius:13px;
+    margin-bottom:10px;
+}
+
+.setting p{
+    margin:4px 0 0;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty{
+    text-align:center;
+    padding:40px 15px;
+    color:var(--muted);
+}
+
+.empty-icon{
+    font-size:45px;
+    margin-bottom:8px;
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:9999;
+    max-width:350px;
+    padding:13px 17px;
+    border-radius:12px;
+    background:#102b40;
+    border:1px solid #2a4b65;
+    box-shadow:var(--shadow);
+    display:none;
+}
+
+.toast.show{
+    display:block;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1050px){
+
+    .stats{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .holdings{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .header-right{
+        width:100%;
+        justify-content:space-between;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .holdings{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .discipline{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .form-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .filters{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:560px){
+
+    .brand h1{
+        font-size:18px;
+    }
+
+    .brand-icon{
+        width:43px;
+        height:43px;
+    }
+
+    main{
+        padding:0 12px 35px;
+    }
+
+    .navbar{
+        padding-left:12px;
+        padding-right:12px;
+    }
+
+    .stats{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .holdings{
+        grid-template-columns:
+            1fr;
+    }
+
+    .discipline{
+        grid-template-columns:
+            1fr;
+    }
+
+    .form-grid,
+    .filters{
+        grid-template-columns:
+            1fr;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .card-header{
+        flex-direction:column;
+    }
+
+    .user-email{
+        max-width:200px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN SCREEN
+===================================================== -->
+
+<div
+    id="loginScreen"
+    class="login-screen"
+>
+
+    <div class="login-card">
+
+        <div class="logo">
+            📈
+        </div>
+
+        <h1>
+            Only My Portfolio Journey
+        </h1>
+
+        <p>
+            Long-term wealth • Growth • Dividend
+        </p>
+
+
+        <div class="input-group">
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="you@example.com"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Password
+            </label>
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Minimum 6 characters"
+            >
+
+        </div>
+
+
+        <button
+            class="btn primary full"
+            onclick="login()"
+        >
+            🔐 Login
+        </button>
+
+
+        <button
+            class="btn secondary full"
+            onclick="createAccount()"
+        >
+            ✨ Create Account
+        </button>
+
+
+        <button
+            class="btn warning full"
+            onclick="forgotPassword()"
+        >
+            🔑 Forgot Password?
+        </button>
+
+
+        <p
+            id="loginMessage"
+            class="message"
+        ></p>
+
+
+        <div class="login-note">
+
+            ☁️ Firebase is the primary cloud database. LocalStorage is kept as a backup.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN APP
+===================================================== -->
+
+<div
+    id="app"
+    class="app hidden"
+>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            📊
+        </div>
+
+        <div>
+
+            <h1>
+                Only My Portfolio Journey
+            </h1>
+
+            <p>
+                10-Year Wealth • Growth • Dividend • Discipline
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="header-right">
+
+        <span
+            id="userEmail"
+            class="user-email"
+        >
+            Guest
+        </span>
+
+        <button
+            class="btn danger"
+            onclick="logout()"
+        >
+            Logout
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <button
+        class="nav-btn active"
+        onclick="showPage('dashboardPage',this)"
+    >
+        🏠 Dashboard
+    </button>
+
+
+    <button
+        class="nav-btn"
+        onclick="showPage('investmentPage',this)"
+    >
+        ➕ Investment
+    </button>
+
+
+    <button
+        class="nav-btn"
+        onclick="showPage('historyPage',this)"
+    >
+        📚 History
+    </button>
+
+
+    <button
+        class="nav-btn"
+        onclick="showPage('dividendPage',this)"
+    >
+        💰 Dividend
+    </button>
+
+
+    <button
+        class="nav-btn"
+        onclick="showPage('notificationPage',this)"
+    >
+        🔔 Notifications
+    </button>
+
+
+    <button
+        class="nav-btn"
+        onclick="showPage('settingsPage',this)"
+    >
+        ⚙️ Settings
+    </button>
+
+</nav>
+
+
+<main>
+
+
+<!-- =====================================================
+     DASHBOARD
+===================================================== -->
+
+<section
+    id="dashboardPage"
+    class="page"
+>
+
+
+<!-- MONTH-WISE DASHBOARD CONTROL -->
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+            <h2>📅 Month-wise Dashboard</h2>
+            <p>Choose a month to see investment, current value and P/L for that month.</p>
+        </div>
+
+        <select
+            id="dashMonthSelect"
+            onchange="renderDashboard()"
+            style="max-width:190px"
+        ></select>
+
+    </div>
+
+    <div class="dividend-summary">
+
+        <div class="dividend-card">
+            <small class="muted">Selected Month Invested</small>
+            <strong id="dashMonthInvested">₹0.00</strong>
+        </div>
+
+        <div class="dividend-card">
+            <small class="muted">Selected Month Value</small>
+            <strong id="dashMonthCurrent">₹0.00</strong>
+        </div>
+
+        <div class="dividend-card">
+            <small class="muted">Selected Month P/L</small>
+            <strong id="dashMonthPL">₹0.00</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div>
+
+                <small>
+                    Monthly Budget
+                </small>
+
+                <strong>
+                    ₹1,500
+                </strong>
+
+            </div>
+
+            <div class="stat-icon green-bg">
+                💰
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div>
+
+                <small>
+                    Selected Month Investment
+                </small>
+
+                <strong id="dashMonth">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="stat-icon blue-bg">
+                📅
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div>
+
+                <small>
+                    Total Invested
+                </small>
+
+                <strong id="dashInvested">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="stat-icon purple-bg">
+                📈
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div>
+
+                <small>
+                    Current Value
+                </small>
+
+                <strong id="dashCurrent">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="stat-icon orange-bg">
+                💎
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat">
+
+        <div class="stat-top">
+
+            <div>
+
+                <small>
+                    P/L
+                </small>
+
+                <strong id="dashPL">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <div class="stat-icon red-bg">
+                📊
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- ALLOCATION -->
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                🎯 Monthly Allocation
+            </h2>
+
+            <p>
+                Dynamic ₹1,500 stock/ETF plan
+            </p>
+
+        </div>
+
+        <span class="badge">
+            100% • ₹1,500
+        </span>
+
+    </div>
+
+
+    <div id="allocation"></div>
+
+</div>
+
+
+<!-- HOLDINGS -->
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                📊 Core Portfolio
+            </h2>
+
+            <p>
+                Long-term holdings
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="holdings">
+
+
+        <div class="holding">
+
+            <div class="holding-top">
+
+                <div class="stock-icon">
+                    ITC
+                </div>
+
+                <span class="tag tag-green">
+                    Dividend
+                </span>
+
+            </div>
+
+            <h3>
+                ITC
+            </h3>
+
+            <p>
+                Consumer + Dividend
+            </p>
+
+        </div>
+
+
+        <div class="holding">
+
+            <div class="holding-top">
+
+                <div class="stock-icon">
+                    REC
+                </div>
+
+                <span class="tag tag-green">
+                    Dividend
+                </span>
+
+            </div>
+
+            <h3>
+                REC
+            </h3>
+
+            <p>
+                Finance + Power
+            </p>
+
+        </div>
+
+
+        <div class="holding">
+
+            <div class="holding-top">
+
+                <div class="stock-icon">
+                    HDB
+                </div>
+
+                <span class="tag tag-blue">
+                    Growth
+                </span>
+
+            </div>
+
+            <h3>
+                HDFC Bank
+            </h3>
+
+            <p>
+                Private Banking
+            </p>
+
+        </div>
+
+
+        <div class="holding">
+
+            <div class="holding-top">
+
+                <div class="stock-icon">
+                    ETF
+                </div>
+
+                <span class="tag tag-blue">
+                    Diversified
+                </span>
+
+            </div>
+
+            <h3>
+                HDFC Smallcap 250 ETF
+            </h3>
+
+            <p>
+                Diversified Growth
+            </p>
+
+        </div>
+
+
+        <div class="holding">
+
+            <div class="holding-top">
+
+                <div class="stock-icon">
+                    RVN
+                </div>
+
+                <span class="tag tag-blue">
+                    Growth
+                </span>
+
+            </div>
+
+            <h3>
+                RVNL
+            </h3>
+
+            <p>
+                Railway Infrastructure
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- DISCIPLINE -->
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                🧠 Investment Discipline
+            </h2>
+
+            <p>
+                Long-term rules
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="discipline">
+
+
+        <div class="discipline-item">
+
+            <span>
+                ⏳
+            </span>
+
+            <div>
+
+                <strong>
+                    Long Term
+                </strong>
+
+                <p>
+                    10+ year journey
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="discipline-item">
+
+            <span>
+                📈
+            </span>
+
+            <div>
+
+                <strong>
+                    SIP Step-Up
+                </strong>
+
+                <p>
+                    10% yearly
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="discipline-item">
+
+            <span>
+                💵
+            </span>
+
+            <div>
+
+                <strong>
+                    Dividend
+                </strong>
+
+                <p>
+                    Reinvest for growth
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="discipline-item">
+
+            <span>
+                🛡️
+            </span>
+
+            <div>
+
+                <strong>
+                    Quality First
+                </strong>
+
+                <p>
+                    Business before price
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     INVESTMENT PAGE
+===================================================== -->
+
+<section
+    id="investmentPage"
+    class="page hidden"
+>
+
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                ➕ Record Investment
+            </h2>
+
+            <p>
+                Enter your actual monthly purchase
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-grid">
+
+
+        <div class="input-group">
+
+            <label>
+                Stock / ETF
+            </label>
+
+            <select id="invStock">
+
+                <option>
+                    ITC
+                </option>
+
+                <option>
+                    REC
+                </option>
+
+                <option>
+                    HDFC Bank
+                </option>
+
+                <option>
+                    RVNL
+                </option>
+
+                <option>
+                    HDFC Smallcap 250 ETF
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Quantity (1–100)
+            </label>
+
+            <input
+                id="invQty"
+                type="number"
+                min="1"
+                max="100"
+                step="1"
+                value="1"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Buy Price ₹
+            </label>
+
+            <input
+                id="invPrice"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="0.00"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Current Price ₹
+            </label>
+
+            <input
+                id="invCurrentPrice"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Optional / latest price"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Status
+            </label>
+
+            <select id="invStatus">
+
+                <option>
+                    ADD
+                </option>
+
+                <option>
+                    HOLD
+                </option>
+
+                <option>
+                    CAUTION
+                </option>
+
+                <option>
+                    NO ADD
+                </option>
+
+                <option>
+                    WAIT
+                </option>
+
+                <option>
+                    REVIEW SELL
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Investment Month
+            </label>
+
+            <input
+                id="invMonth"
+                type="month"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Remarks
+            </label>
+
+            <input
+                id="invRemarks"
+                placeholder="Optional"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <div class="preview">
+
+        <span>
+            Total Investment
+        </span>
+
+        <strong id="invTotal">
+            ₹0.00
+        </strong>
+
+    </div>
+
+
+    <button
+        class="btn primary"
+        onclick="saveInvestment()"
+    >
+        💾 Save Investment
+    </button>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     HISTORY PAGE
+===================================================== -->
+
+<section
+    id="historyPage"
+    class="page hidden"
+>
+
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                📚 Investment History
+            </h2>
+
+            <p>
+                Filter your actual purchases
+            </p>
+
+        </div>
+
+
+        <button
+            class="btn secondary"
+            onclick="exportCSV()"
+        >
+            📤 Export CSV
+        </button>
+
+    </div>
+
+
+    <div class="filters">
+
+
+        <select id="filterStock">
+
+            <option>
+                ALL STOCKS
+            </option>
+
+            <option>
+                ITC
+            </option>
+
+            <option>
+                REC
+            </option>
+
+            <option>
+                HDFC Bank
+            </option>
+
+            <option>
+                RVNL
+            </option>
+
+            <option>
+                HDFC Smallcap 250 ETF
+            </option>
+
+        </select>
+
+
+        <select id="filterQty">
+
+            <option>
+                ALL QTY
+            </option>
+
+        </select>
+
+
+        <select id="filterStatus">
+
+            <option>
+                ALL STATUS
+            </option>
+
+            <option>
+                ADD
+            </option>
+
+            <option>
+                HOLD
+            </option>
+
+            <option>
+                CAUTION
+            </option>
+
+            <option>
+                NO ADD
+            </option>
+
+            <option>
+                WAIT
+            </option>
+
+            <option>
+                REVIEW SELL
+            </option>
+
+        </select>
+
+
+        <input
+            id="filterMonth"
+            type="month"
+        >
+
+
+    </div>
+
+
+    <div class="table-wrap">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Stock / ETF
+                    </th>
+
+                    <th>
+                        Qty
+                    </th>
+
+                    <th>
+                        Buy Price
+                    </th>
+
+                    <th>
+                        Total Invested
+                    </th>
+
+                    <th>
+                        Current Value
+                    </th>
+
+                    <th>
+                        P/L
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Remarks
+                    </th>
+
+                    <th>
+                        Update
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="historyBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     DIVIDEND PAGE
+===================================================== -->
+
+<section
+    id="dividendPage"
+    class="page hidden"
+>
+
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                💰 Dividend Tracker
+            </h2>
+
+            <p>
+                Track received and reinvested dividends
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="dividend-summary">
+
+
+        <div class="dividend-card">
+
+            <small class="muted">
+                Total Dividend
+            </small>
+
+            <strong id="divTotal">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <div class="dividend-card">
+
+            <small class="muted">
+                Reinvested
+            </small>
+
+            <strong id="divReinvested">
+                ₹0
+            </strong>
+
+        </div>
+
+
+        <div class="dividend-card">
+
+            <small class="muted">
+                Records
+            </small>
+
+            <strong id="divCount">
+                0
+            </strong>
+
+        </div>
+
+
+    </div>
+
+
+    <div style="margin-top:20px">
+
+
+        <div class="form-grid">
+
+
+            <div class="input-group">
+
+                <label>
+                    Stock
+                </label>
+
+                <select id="divStock">
+
+                    <option>
+                        ITC
+                    </option>
+
+                    <option>
+                        REC
+                    </option>
+
+                    <option>
+                        HDFC Bank
+                    </option>
+
+                    <option>
+                        RVNL
+                    </option>
+
+                    <option>
+                        HDFC Smallcap 250 ETF
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Dividend Amount ₹
+                </label>
+
+                <input
+                    id="divAmount"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>
+                    Date
+                </label>
+
+                <input
+                    id="divDate"
+                    type="date"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <label>
+            Reinvest Dividend?
+        </label>
+
+        <select id="divReinvest">
+
+            <option>
+                YES
+            </option>
+
+            <option>
+                NO
+            </option>
+
+        </select>
+
+
+        <button
+            class="btn primary"
+            style="margin-top:10px"
+            onclick="saveDividend()"
+        >
+            💾 Save Dividend
+        </button>
+
+
+    </div>
+
+
+    <div
+        id="dividendList"
+        style="margin-top:20px"
+    ></div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     NOTIFICATION PAGE
+===================================================== -->
+
+<section
+    id="notificationPage"
+    class="page hidden"
+>
+
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                🔔 Notification Center
+            </h2>
+
+            <p>
+                Monthly portfolio review history
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <textarea
+        id="notificationText"
+        placeholder="Paste your monthly portfolio notification here..."
+    ></textarea>
+
+
+    <button
+        class="btn primary"
+        style="margin-top:10px"
+        onclick="saveNotification()"
+    >
+        💾 Save Notification
+    </button>
+
+
+    <div id="notificationList">
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     SETTINGS
+===================================================== -->
+
+<section
+    id="settingsPage"
+    class="page hidden"
+>
+
+
+<div class="card">
+
+    <div class="card-header">
+
+        <div>
+
+            <h2>
+                ⚙️ Settings
+            </h2>
+
+            <p>
+                Portfolio configuration
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="setting">
+
+        <div>
+
+            <strong>
+                Monthly Stock / ETF Budget
+            </strong>
+
+            <p>
+                Current monthly allocation
+            </p>
+
+        </div>
+
+        <strong>
+            ₹1,500
+        </strong>
+
+    </div>
+
+
+    <div class="setting">
+
+        <div>
+
+            <strong>
+                MF SIP
+            </strong>
+
+            <p>
+                Current monthly SIP
+            </p>
+
+        </div>
+
+        <strong>
+            ₹1,230
+        </strong>
+
+    </div>
+
+
+    <div class="setting">
+
+        <div>
+
+            <strong>
+                Annual SIP Step-Up
+            </strong>
+
+            <p>
+                Yearly increase
+            </p>
+
+        </div>
+
+        <strong>
+            10%
+        </strong>
+
+    </div>
+
+
+    <div class="setting">
+
+        <div>
+
+            <strong>
+                Investment Horizon
+            </strong>
+
+            <p>
+                Long-term journey
+            </p>
+
+        </div>
+
+        <strong>
+            10+ Years
+        </strong>
+
+    </div>
+
+
+    <hr
+        style="
+        border-color:#203d57;
+        margin:25px 0;
+        "
+    >
+
+
+    <h3>
+        📈 SIP Step-Up Calculator
+    </h3>
+
+
+    <div class="form-grid">
+
+
+        <div class="input-group">
+
+            <label>
+                Current Monthly SIP
+            </label>
+
+            <input
+                id="sipCurrent"
+                type="number"
+                value="1230"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Annual Step-Up %
+            </label>
+
+            <input
+                id="sipStep"
+                type="number"
+                value="10"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Future Year
+            </label>
+
+            <input
+                id="sipYear"
+                type="number"
+                value="10"
+                min="1"
+                max="50"
+            >
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        class="btn primary"
+        onclick="calculateSIP()"
+    >
+        🧮 Calculate
+    </button>
+
+
+    <div
+        id="sipResult"
+        class="preview"
+        style="margin-top:15px"
+    >
+
+        <span>
+            Year 10 Monthly SIP
+        </span>
+
+        <strong>
+            ₹3,191.25
+        </strong>
+
+    </div>
+
+
+    <hr
+        style="
+        border-color:#203d57;
+        margin:25px 0;
+        "
+    >
+
+
+    <h3>
+        💾 Data Backup
+    </h3>
+
+
+    <div
+        style="
+        display:flex;
+        gap:8px;
+        flex-wrap:wrap;
+        "
+    >
+
+        <button
+            class="btn secondary"
+            onclick="backupData()"
+        >
+            📥 Backup Data
+        </button>
+
+
+        <button
+            class="btn secondary"
+            onclick="document.getElementById('restoreFile').click()"
+        >
+            📤 Restore Data
+        </button>
+
+
+        <input
+            id="restoreFile"
+            type="file"
+            accept=".json"
+            class="hidden"
+            onchange="restoreData(event)"
+        >
+
+
+        <button
+            class="btn danger"
+            onclick="clearAllData()"
+        >
+            🗑️ Clear All Data
+        </button>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+
+
+/* =========================================================
+   FIREBASE CONFIG / CLOUD SYNC
+========================================================= */
+
+const firebaseConfig = {
+    apiKey: "AIzaSyBCj4EEYDKbtuBtdHsHEssW3zHcLAv0CRA",
+    authDomain: "prasanta-attendance-system.firebaseapp.com",
+    projectId: "prasanta-attendance-system",
+    storageBucket: "prasanta-attendance-system.firebasestorage.app",
+    messagingSenderId: "265672524321",
+    appId: "1:265672524321:web:718054e1195e33b16e1960",
+    measurementId: "G-392N4ZEF5Y"
+};
+
+let firebaseApp = null;
+let firebaseAuth = null;
+let firestore = null;
+let cloudUser = null;
+let cloudSaveTimer = null;
+let cloudReady = false;
+
+try {
+    firebaseApp = firebase.initializeApp(firebaseConfig);
+    firebaseAuth = firebase.auth();
+    firestore = firebase.firestore();
+    cloudReady = true;
+} catch(error) {
+    console.error("Firebase initialization failed:", error);
+}
+
+function firebaseUserRoot(){
+    if(!cloudUser || !firestore) return null;
+    return firestore
+        .collection("users")
+        .doc(cloudUser.uid);
+}
+
+function queueCloudSave(){
+    if(!cloudReady || !cloudUser) return;
+
+    clearTimeout(cloudSaveTimer);
+
+    cloudSaveTimer = setTimeout(
+        () => syncAllToFirestore(),
+        700
+    );
+}
+
+async function syncCollection(name, items){
+    const root = firebaseUserRoot();
+    if(!root) return;
+
+    const collectionRef = root.collection(name);
+    const oldSnap = await collectionRef.get();
+
+    let batch = firestore.batch();
+    let count = 0;
+
+    oldSnap.forEach(doc => {
+        batch.delete(doc.ref);
+        count++;
+
+        if(count >= 400){
+            batch.commit();
+            batch = firestore.batch();
+            count = 0;
+        }
+    });
+
+    for(const item of items){
+        const id = String(
+            item.id ||
+            Date.now() + Math.random().toString(36).slice(2)
+        );
+
+        const ref = collectionRef.doc(id);
+
+        batch.set(
+            ref,
+            {
+                ...item,
+                _savedAt:
+                    firebase.firestore.FieldValue.serverTimestamp()
+            }
+        );
+
+        count++;
+
+        if(count >= 400){
+            await batch.commit();
+            batch = firestore.batch();
+            count = 0;
+        }
+    }
+
+    if(count > 0){
+        await batch.commit();
+    }
+}
+
+async function syncAllToFirestore(){
+    if(!cloudReady || !cloudUser || !firestore) return;
+
+    try{
+        const root = firebaseUserRoot();
+
+        await root
+            .collection("profile")
+            .doc("main")
+            .set(
+                {
+                    email: cloudUser.email || data.user?.email || "",
+                    updatedAt:
+                        firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {merge:true}
+            );
+
+        await syncCollection(
+            "investments",
+            data.investments || []
+        );
+
+        await syncCollection(
+            "dividends",
+            data.dividends || []
+        );
+
+        await syncCollection(
+            "notifications",
+            data.notifications || []
+        );
+
+        await root
+            .collection("settings")
+            .doc("main")
+            .set(
+                {
+                    monthlyBudget: MONTHLY_BUDGET,
+                    annualStepUp: 10,
+                    mfSip: 1230,
+                    horizonYears: 10,
+                    updatedAt:
+                        firebase.firestore.FieldValue.serverTimestamp()
+                },
+                {merge:true}
+            );
+
+        console.log("Firestore sync complete.");
+    }
+    catch(error){
+        console.error("Firestore sync failed:", error);
+        toast("⚠️ Local save done; cloud sync failed.");
+    }
+}
+
+async function clearCloudData(){
+    if(!cloudUser || !firestore) return;
+
+    const root =
+        firebaseUserRoot();
+
+    const names = [
+        "investments",
+        "dividends",
+        "notifications",
+        "profile",
+        "settings"
+    ];
+
+    for(const name of names){
+        const snap =
+            await root
+            .collection(name)
+            .get();
+
+        let batch =
+            firestore.batch();
+
+        let count = 0;
+
+        for(const doc of snap.docs){
+            batch.delete(doc.ref);
+            count++;
+
+            if(count >= 400){
+                await batch.commit();
+                batch = firestore.batch();
+                count = 0;
+            }
+        }
+
+        if(count > 0)
+            await batch.commit();
+    }
+}
+
+async function loadCloudData(user){
+    if(!cloudReady || !user || !firestore) return false;
+
+    try{
+        const root = firestore
+            .collection("users")
+            .doc(user.uid);
+
+        const [invSnap, divSnap, notSnap] =
+            await Promise.all([
+                root.collection("investments").get(),
+                root.collection("dividends").get(),
+                root.collection("notifications").get()
+            ]);
+
+        const cloudInvestments =
+            invSnap.docs.map(
+                doc => ({id:doc.id, ...doc.data()})
+            );
+
+        const cloudDividends =
+            divSnap.docs.map(
+                doc => ({id:doc.id, ...doc.data()})
+            );
+
+        const cloudNotifications =
+            notSnap.docs.map(
+                doc => ({id:doc.id, ...doc.data()})
+            );
+
+        const localBackup =
+            JSON.parse(
+                localStorage.getItem(STORAGE_KEY)
+            ) || {
+                user:null,
+                investments:[],
+                dividends:[],
+                notifications:[]
+            };
+
+        const cloudHasData =
+            cloudInvestments.length ||
+            cloudDividends.length ||
+            cloudNotifications.length;
+
+        if(cloudHasData){
+            data.investments = cloudInvestments;
+            data.dividends = cloudDividends;
+            data.notifications = cloudNotifications;
+        }
+        else if(
+            localBackup.investments?.length ||
+            localBackup.dividends?.length ||
+            localBackup.notifications?.length
+        ){
+            data.investments =
+                localBackup.investments || [];
+
+            data.dividends =
+                localBackup.dividends || [];
+
+            data.notifications =
+                localBackup.notifications || [];
+
+            toast("☁️ Local backup migrated to Firebase.");
+        }
+        else{
+            data.investments = [];
+            data.dividends = [];
+            data.notifications = [];
+        }
+
+        data.user = {
+            email: user.email || ""
+        };
+
+        localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(data)
+        );
+
+        if(!cloudHasData){
+            await syncAllToFirestore();
+        }
+
+        return true;
+    }
+    catch(error){
+        console.error("Cloud load failed:", error);
+        toast("⚠️ Firebase unavailable. Local backup loaded.");
+        return false;
+    }
+}
+
+if(firebaseAuth){
+    firebaseAuth.onAuthStateChanged(async user => {
+        if(!user){
+            cloudUser = null;
+            return;
+        }
+
+        cloudUser = user;
+
+        // Open the app immediately after Firebase authentication.
+        // Do not block the whole UI while Firestore is loading.
+        data.user = { email: user.email || "" };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        openApp();
+
+        try{
+            const cloudLoad = loadCloudData(user);
+            await Promise.race([
+                cloudLoad,
+                new Promise(resolve => setTimeout(resolve, 8000))
+            ]);
+        }catch(error){
+            console.error("Firebase data load error:", error);
+            toast("⚠️ Cloud sync failed. Local data loaded.");
+        }
+
+        try{
+            await createMonthlyNotificationIfNeeded();
+        }catch(error){
+            console.error("Monthly notification error:", error);
+        }
+    });
+}
+
+
+/* =========================================================
+   ONLY MY PORTFOLIO JOURNEY
+   SINGLE-FILE APPLICATION
+========================================================= */
+
+
+/* =========================================================
+   CONSTANTS
+========================================================= */
+
+const STORAGE_KEY =
+    "only_my_portfolio_journey_v2";
+
+
+const MONTHLY_BUDGET =
+    1500;
+
+
+const monthlyPlan = [
+
+    {
+        name:"ITC",
+        amount:375
+    },
+
+    {
+        name:"REC",
+        amount:375
+    },
+
+    {
+        name:"HDFC Bank",
+        amount:300
+    },
+
+    {
+        name:"HDFC Smallcap 250 ETF",
+        amount:300
+    },
+
+    {
+        name:"RVNL",
+        amount:150
+    }
+
+];
+
+
+/* =========================================================
+   APPLICATION STATE
+========================================================= */
+
+let data =
+    JSON.parse(
+        localStorage.getItem(
+            STORAGE_KEY
+        )
+    ) || {
+
+        user:null,
+
+        investments:[],
+
+        dividends:[],
+
+        notifications:[]
+
+    };
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function saveData(){
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+    );
+
+    queueCloudSave();
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function toast(message){
+
+    const box =
+        document.getElementById(
+            "toast"
+        );
+
+    box.textContent =
+        message;
+
+    box.classList.add(
+        "show"
+    );
+
+    setTimeout(
+        ()=>{
+            box.classList.remove(
+                "show"
+            );
+        },
+        2200
+    );
+
+}
+
+
+/* =========================================================
+   CURRENCY
+========================================================= */
+
+function money(value){
+
+    return "₹" +
+        Number(value || 0)
+        .toLocaleString(
+            "en-IN",
+            {
+                minimumFractionDigits:2,
+                maximumFractionDigits:2
+            }
+        );
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+async function login(){
+
+    const email =
+        document
+        .getElementById(
+            "loginEmail"
+        )
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById(
+            "loginPassword"
+        )
+        .value;
+
+    const msg =
+        document.getElementById(
+            "loginMessage"
+        );
+
+    if(!email){
+        msg.textContent =
+            "Please enter your email.";
+        return;
+    }
+
+    if(password.length < 6){
+        msg.textContent =
+            "Password must contain at least 6 characters.";
+        return;
+    }
+
+    if(!firebaseAuth){
+        msg.textContent =
+            "Firebase could not be initialized.";
+        return;
+    }
+
+    msg.textContent =
+        "🔐 Signing in...";
+
+    try{
+        const loginPromise = firebaseAuth
+            .signInWithEmailAndPassword(
+                email,
+                password
+            );
+
+        const timeoutPromise = new Promise((_, reject) =>
+            setTimeout(() => {
+                const e = new Error("Login request timed out.");
+                e.code = "auth/network-request-failed";
+                reject(e);
+            }, 15000)
+        );
+
+        await Promise.race([loginPromise, timeoutPromise]);
+
+        msg.textContent =
+            "✅ Login successful. Loading portfolio...";
+    }
+    catch(error){
+        console.error("Firebase login error:", error);
+
+        msg.textContent =
+            firebaseErrorMessage(error);
+    }
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
+
+async function forgotPassword(){
+
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim();
+
+    const msg =
+        document.getElementById("loginMessage");
+
+    if(!email){
+        msg.textContent =
+            "📧 Enter your registered email first.";
+        return;
+    }
+
+    if(!firebaseAuth){
+        msg.textContent =
+            "Firebase could not be initialized.";
+        return;
+    }
+
+    msg.textContent =
+        "📨 Sending password reset email...";
+
+    try{
+        await firebaseAuth.sendPasswordResetEmail(email);
+        msg.textContent =
+            "✅ Reset link sent. Check your email inbox/spam.";
+    }
+    catch(error){
+        console.error(error);
+        msg.textContent = firebaseErrorMessage(error);
+    }
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT
+========================================================= */
+
+async function createAccount(){
+
+    const email =
+        document
+        .getElementById(
+            "loginEmail"
+        )
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById(
+            "loginPassword"
+        )
+        .value;
+
+    const msg =
+        document.getElementById(
+            "loginMessage"
+        );
+
+    if(!email){
+        msg.textContent =
+            "Please enter your email.";
+        return;
+    }
+
+    if(password.length < 6){
+        msg.textContent =
+            "Password must contain at least 6 characters.";
+        return;
+    }
+
+    if(!firebaseAuth){
+        msg.textContent =
+            "Firebase could not be initialized.";
+        return;
+    }
+
+    msg.textContent =
+        "✨ Creating account...";
+
+    try{
+        await firebaseAuth
+            .createUserWithEmailAndPassword(
+                email,
+                password
+            );
+
+        msg.textContent =
+            "✅ Account created successfully.";
+    }
+    catch(error){
+        console.error(error);
+
+        msg.textContent =
+            firebaseErrorMessage(error);
+    }
+}
+
+
+function firebaseErrorMessage(error){
+
+    const code =
+        error?.code || "";
+
+    const messages = {
+        "auth/invalid-email":
+            "❌ Invalid email address.",
+        "auth/user-not-found":
+            "❌ Account not found.",
+        "auth/wrong-password":
+            "❌ Incorrect password.",
+        "auth/invalid-credential":
+            "❌ Incorrect email or password.",
+        "auth/email-already-in-use":
+            "❌ This email is already registered.",
+        "auth/weak-password":
+            "❌ Password is too weak.",
+        "auth/too-many-requests":
+            "❌ Too many attempts. Try again later.",
+        "auth/user-disabled":
+            "❌ This account has been disabled.",
+        "auth/network-request-failed":
+            "❌ Network error. Check your internet connection.",
+        "auth/operation-not-allowed":
+            "❌ Email/Password sign-in is not enabled in Firebase."
+    };
+
+    return messages[code] ||
+        "❌ Authentication failed. Please try again.";
+}
+
+
+/* =========================================================
+   OPTION 3 — MONTHLY NOTIFICATION ON APP OPEN
+   Runs after the 10th of each month when the app is opened.
+   It creates one notification per month only.
+========================================================= */
+
+async function createMonthlyNotificationIfNeeded(){
+
+    if(!cloudUser) return;
+
+    const now = new Date();
+
+    // Option 3: generate only from the 10th onward.
+    if(now.getDate() < 10) return;
+
+    const monthKey =
+        now.getFullYear() + "-" +
+        String(now.getMonth()+1).padStart(2,"0");
+
+    const alreadyExists =
+        (data.notifications || []).some(n =>
+            n.monthKey === monthKey &&
+            n.type === "monthly_portfolio_review"
+        );
+
+    if(alreadyExists) return;
+
+    const allocation = [
+        ["ITC",20,300],
+        ["REC",25,375],
+        ["HDFC Bank",25,375],
+        ["HDFC Smallcap 250 ETF",20,300],
+        ["RVNL",10,150]
+    ];
+
+    const lines = allocation.map(x =>
+        `• ${x[0]} — ${x[1]}% — ₹${x[2]}`
+    ).join("\n");
+
+    const text =
+        `🔔 Monthly Portfolio Review — ${monthKey}\n\n` +
+        `₹1,500 monthly stock/ETF allocation baseline:\n` +
+        lines +
+        `\n\n📌 Open the app and review business quality, valuation and recent results before making the month's purchase.`;
+
+    data.notifications.push({
+        id: Date.now(),
+        type: "monthly_portfolio_review",
+        monthKey: monthKey,
+        text: text,
+        createdAt: now.toISOString()
+    });
+
+    saveData();
+    renderNotifications();
+    toast("🔔 Monthly portfolio notification added.");
+}
+
+
+/* =========================================================
+   OPEN APP
+========================================================= */
+
+function openApp(){
+
+    document
+    .getElementById(
+        "loginScreen"
+    )
+    .classList
+    .add(
+        "hidden"
+    );
+
+
+    document
+    .getElementById(
+        "app"
+    )
+    .classList
+    .remove(
+        "hidden"
+    );
+
+
+    document
+    .getElementById(
+        "userEmail"
+    )
+    .textContent =
+        data.user.email;
+
+
+    setup();
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+async function logout(){
+
+    try{
+        if(firebaseAuth){
+            await firebaseAuth.signOut();
+        }
+    }
+    catch(error){
+        console.error(error);
+    }
+
+    cloudUser = null;
+
+    data.user = null;
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(data)
+    );
+
+    document
+    .getElementById(
+        "app"
+    )
+    .classList
+    .add(
+        "hidden"
+    );
+
+    document
+    .getElementById(
+        "loginScreen"
+    )
+    .classList
+    .remove(
+        "hidden"
+    );
+
+}
+
+
+/* =========================================================
+   INITIAL SETUP
+========================================================= */
+
+function setup(){
+
+    setupQuantityFilter();
+
+    setupMonth();
+
+    setupCalculator();
+
+    renderAllocation();
+
+    renderDashboard();
+
+    renderHistory();
+
+    renderDividends();
+
+    renderNotifications();
+
+}
+
+
+/* =========================================================
+   QUANTITY FILTER
+========================================================= */
+
+function setupQuantityFilter(){
+
+    const select =
+        document.getElementById(
+            "filterQty"
+        );
+
+
+    if(
+        select.options.length > 1
+    ) return;
+
+
+    for(
+        let i=1;
+        i<=100;
+        i++
+    ){
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value =
+            i;
+
+        option.textContent =
+            i;
+
+        select.appendChild(
+            option
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MONTH
+========================================================= */
+
+function setupMonth(){
+
+    const input =
+        document.getElementById(
+            "invMonth"
+        );
+
+
+    if(
+        !input.value
+    ){
+
+        input.value =
+            new Date()
+            .toISOString()
+            .slice(0,7);
+
+    }
+
+}
+
+
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
+
+function showPage(
+    id,
+    button
+){
+
+    document
+    .querySelectorAll(
+        ".page"
+    )
+    .forEach(
+        page =>
+            page.classList
+            .add("hidden")
+    );
+
+
+    document
+    .getElementById(
+        id
+    )
+    .classList
+    .remove(
+        "hidden"
+    );
+
+
+    document
+    .querySelectorAll(
+        ".nav-btn"
+    )
+    .forEach(
+        btn =>
+            btn.classList
+            .remove(
+                "active"
+            )
+    );
+
+
+    if(button){
+
+        button.classList
+        .add(
+            "active"
+        );
+
+    }
+
+
+    if(
+        id ===
+        "dashboardPage"
+    ){
+
+        renderDashboard();
+
+    }
+
+
+    if(
+        id ===
+        "historyPage"
+    ){
+
+        renderHistory();
+
+    }
+
+
+    if(
+        id ===
+        "dividendPage"
+    ){
+
+        renderDividends();
+
+    }
+
+
+    if(
+        id ===
+        "notificationPage"
+    ){
+
+        renderNotifications();
+
+    }
+
+}
+
+
+/* =========================================================
+   ALLOCATION
+========================================================= */
+
+function renderAllocation(){
+
+    const container =
+        document.getElementById(
+            "allocation"
+        );
+
+
+    container.innerHTML = "";
+
+
+    monthlyPlan.forEach(
+        item => {
+
+            const percent =
+                (
+                    item.amount /
+                    MONTHLY_BUDGET
+                ) * 100;
+
+
+            container.innerHTML += `
+
+                <div class="allocation-row">
+
+                    <div class="allocation-head">
+
+                        <strong>
+                            ${item.name}
+                        </strong>
+
+                        <span>
+                            ₹${item.amount}
+                            •
+                            ${percent.toFixed(0)}%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar"
+                            style="
+                            width:${percent}%;
+                            "
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+function renderDashboard(){
+
+    const now =
+        new Date();
+
+    const currentMonth =
+        now.toISOString()
+        .slice(0,7);
+
+    const select =
+        document.getElementById(
+            "dashMonthSelect"
+        );
+
+    if(select){
+
+        const months = new Set();
+
+        months.add(currentMonth);
+
+        data.investments.forEach(
+            item => {
+                if(item.month)
+                    months.add(item.month);
+            }
+        );
+
+        const sortedMonths =
+            [...months]
+            .sort()
+            .reverse();
+
+        const oldValue =
+            select.value;
+
+        select.innerHTML =
+            sortedMonths
+            .map(
+                month =>
+                    `<option value="${month}">
+                        ${month}
+                    </option>`
+            )
+            .join("");
+
+        if(
+            sortedMonths.includes(oldValue)
+        ){
+            select.value = oldValue;
+        }
+        else{
+            select.value = currentMonth;
+        }
+    }
+
+    const selectedMonth =
+        select?.value ||
+        currentMonth;
+
+    const monthItems =
+        data.investments
+        .filter(
+            item =>
+                item.month ===
+                selectedMonth
+        );
+
+    const monthInvested =
+        monthItems
+        .reduce(
+            (sum,item)=>
+                sum +
+                Number(
+                    item.total
+                ),
+            0
+        );
+
+    const monthCurrent =
+        monthItems
+        .reduce(
+            (sum,item)=>
+                sum +
+                (
+                    Number(
+                        item.currentValue
+                    ) ||
+                    Number(
+                        item.total
+                    )
+                ),
+            0
+        );
+
+    const monthPL =
+        monthCurrent -
+        monthInvested;
+
+    const invested =
+        data.investments
+        .reduce(
+            (sum,item)=>
+                sum +
+                Number(
+                    item.total
+                ),
+            0
+        );
+
+    const current =
+        data.investments
+        .reduce(
+            (sum,item)=>
+                sum +
+                (
+                    Number(
+                        item.currentValue
+                    ) ||
+                    Number(
+                        item.total
+                    )
+                ),
+            0
+        );
+
+    const pl =
+        current -
+        invested;
+
+    const dashMonth =
+        document.getElementById(
+            "dashMonth"
+        );
+
+    if(dashMonth){
+        dashMonth.textContent =
+            money(
+                monthInvested
+            );
+    }
+
+    document
+    .getElementById(
+        "dashInvested"
+    )
+    .textContent =
+        money(
+            invested
+        );
+
+    document
+    .getElementById(
+        "dashCurrent"
+    )
+    .textContent =
+        money(
+            current
+        );
+
+    const plElement =
+        document.getElementById(
+            "dashPL"
+        );
+
+    const overallPLPercent =
+        invested
+        ? (pl / invested) * 100
+        : 0;
+
+    plElement.textContent =
+        `${money(pl)} (${pl >= 0 ? "+" : ""}${overallPLPercent.toFixed(2)}%)`;
+
+    plElement.style.color =
+        pl >= 0
+        ? "var(--green)"
+        : "var(--red)";
+
+    const monthInvestedElement =
+        document.getElementById(
+            "dashMonthInvested"
+        );
+
+    const monthCurrentElement =
+        document.getElementById(
+            "dashMonthCurrent"
+        );
+
+    const monthPLElement =
+        document.getElementById(
+            "dashMonthPL"
+        );
+
+    if(monthInvestedElement)
+        monthInvestedElement.textContent =
+            money(monthInvested);
+
+    if(monthCurrentElement)
+        monthCurrentElement.textContent =
+            money(monthCurrent);
+
+    if(monthPLElement){
+        const monthPLPercent =
+            monthInvested
+            ? (monthPL / monthInvested) * 100
+            : 0;
+
+        monthPLElement.textContent =
+            `${money(monthPL)} (${monthPL >= 0 ? "+" : ""}${monthPLPercent.toFixed(2)}%)`;
+
+        monthPLElement.style.color =
+            monthPL >= 0
+            ? "var(--green)"
+            : "var(--red)";
+    }
+
+    renderAllocation();
+
+}
+
+
+/* =========================================================
+   INVESTMENT CALCULATOR
+========================================================= */
+
+function setupCalculator(){
+
+    const qty =
+        document.getElementById(
+            "invQty"
+        );
+
+
+    const price =
+        document.getElementById(
+            "invPrice"
+        );
+
+
+    qty.addEventListener(
+        "input",
+        calculateInvestment
+    );
+
+
+    price.addEventListener(
+        "input",
+        calculateInvestment
+    );
+
+
+    calculateInvestment();
+
+}
+
+
+function calculateInvestment(){
+
+    const qty =
+        Number(
+            document
+            .getElementById(
+                "invQty"
+            )
+            .value
+        );
+
+
+    const price =
+        Number(
+            document
+            .getElementById(
+                "invPrice"
+            )
+            .value
+        );
+
+
+    document
+    .getElementById(
+        "invTotal"
+    )
+    .textContent =
+        money(
+            qty * price
+        );
+
+}
+
+
+/* =========================================================
+   SAVE INVESTMENT
+========================================================= */
+
+function saveInvestment(){
+
+    const stock =
+        document
+        .getElementById(
+            "invStock"
+        )
+        .value;
+
+
+    const qty =
+        Number(
+            document
+            .getElementById(
+                "invQty"
+            )
+            .value
+        );
+
+
+    const price =
+        Number(
+            document
+            .getElementById(
+                "invPrice"
+            )
+            .value
+        );
+
+
+    const currentPriceRaw =
+        document
+        .getElementById(
+            "invCurrentPrice"
+        )
+        .value;
+
+
+    const currentPrice =
+        currentPriceRaw === ""
+        ? price
+        : Number(
+            currentPriceRaw
+        );
+
+
+    const status =
+        document
+        .getElementById(
+            "invStatus"
+        )
+        .value;
+
+
+    const month =
+        document
+        .getElementById(
+            "invMonth"
+        )
+        .value;
+
+
+    const remarks =
+        document
+        .getElementById(
+            "invRemarks"
+        )
+        .value
+        .trim();
+
+
+    if(
+        !Number.isInteger(qty) ||
+        qty < 1 ||
+        qty > 100
+    ){
+
+        toast(
+            "❌ Quantity must be 1–100."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !Number.isFinite(price) ||
+        price <= 0
+    ){
+
+        toast(
+            "❌ Enter a valid buy price."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !Number.isFinite(currentPrice) ||
+        currentPrice <= 0
+    ){
+
+        toast(
+            "❌ Enter a valid current price."
+        );
+
+        return;
+
+    }
+
+
+    if(!month){
+
+        toast(
+            "❌ Select investment month."
+        );
+
+        return;
+
+    }
+
+
+    data.investments.push({
+
+        id:
+            Date.now(),
+
+        stock:
+            stock,
+
+        qty:
+            qty,
+
+        price:
+            price,
+
+        total:
+            qty * price,
+
+        status:
+            status,
+
+        month:
+            month,
+
+        remarks:
+            remarks,
+
+        currentPrice:
+            currentPrice,
+
+        currentValue:
+            qty * currentPrice,
+
+        createdAt:
+            new Date()
+            .toISOString()
+
+    });
+
+
+    saveData();
+
+
+    toast(
+        "✅ Investment saved."
+    );
+
+
+    document
+    .getElementById(
+        "invQty"
+    )
+    .value = 1;
+
+
+    document
+    .getElementById(
+        "invPrice"
+    )
+    .value = "";
+
+
+    document
+    .getElementById(
+        "invCurrentPrice"
+    )
+    .value = "";
+
+
+    document
+    .getElementById(
+        "invRemarks"
+    )
+    .value = "";
+
+
+    calculateInvestment();
+
+    renderDashboard();
+
+    renderHistory();
+
+}
+
+
+/* =========================================================
+   HISTORY FILTERS
+========================================================= */
+
+[
+    "filterStock",
+    "filterQty",
+    "filterStatus",
+    "filterMonth"
+]
+.forEach(
+    id => {
+
+        document
+        .getElementById(
+            id
+        )
+        .addEventListener(
+            "change",
+            renderHistory
+        );
+
+    }
+);
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+function renderHistory(){
+
+    const body =
+        document.getElementById(
+            "historyBody"
+        );
+
+
+    const stock =
+        document
+        .getElementById(
+            "filterStock"
+        )
+        .value;
+
+
+    const qty =
+        document
+        .getElementById(
+            "filterQty"
+        )
+        .value;
+
+
+    const status =
+        document
+        .getElementById(
+            "filterStatus"
+        )
+        .value;
+
+
+    const month =
+        document
+        .getElementById(
+            "filterMonth"
+        )
+        .value;
+
+
+    let list =
+        [...data.investments];
+
+
+    if(
+        stock !==
+        "ALL STOCKS"
+    ){
+
+        list =
+            list.filter(
+                item =>
+                    item.stock ===
+                    stock
+            );
+
+    }
+
+
+    if(
+        qty !==
+        "ALL QTY"
+    ){
+
+        list =
+            list.filter(
+                item =>
+                    String(
+                        item.qty
+                    ) ===
+                    String(
+                        qty
+                    )
+            );
+
+    }
+
+
+    if(
+        status !==
+        "ALL STATUS"
+    ){
+
+        list =
+            list.filter(
+                item =>
+                    item.status ===
+                    status
+            );
+
+    }
+
+
+    if(month){
+
+        list =
+            list.filter(
+                item =>
+                    item.month ===
+                    month
+            );
+
+    }
+
+
+    list.sort(
+        (a,b)=>
+            new Date(
+                b.createdAt
+            ) -
+            new Date(
+                a.createdAt
+            )
+    );
+
+
+    body.innerHTML = "";
+
+
+    if(!list.length){
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="10"
+                    style="
+                    text-align:center;
+                    padding:35px;
+                    color:#91a7bc;
+                    "
+                >
+
+                    📭 No investment records found.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.forEach(
+        item => {
+
+            const row =
+                document.createElement(
+                    "tr"
+                );
+
+
+            row.innerHTML = `
+
+                <td>
+                    ${formatDate(
+                        item.createdAt
+                    )}
+                </td>
+
+                <td>
+                    <strong>
+                        ${safe(
+                            item.stock
+                        )}
+                    </strong>
+                </td>
+
+                <td>
+                    ${item.qty}
+                </td>
+
+                <td>
+                    ${money(
+                        item.price
+                    )}
+                </td>
+
+                <td>
+                    <strong>
+                        ${money(
+                            item.total
+                        )}
+                    </strong>
+                </td>
+
+                <td>
+                    <strong>
+                        ${money(
+                            Number(item.currentValue) ||
+                            Number(item.total)
+                        )}
+                    </strong>
+                </td>
+
+                <td>
+                    ${investmentPLBadge(item)}
+                </td>
+
+                <td>
+                    ${statusBadge(
+                        item.status
+                    )}
+                </td>
+
+                <td>
+                    ${safe(
+                        item.remarks ||
+                        "-"
+                    )}
+                </td>
+
+                <td>
+                    <button
+                        class="btn secondary"
+                        style="padding:6px 9px;font-size:12px"
+                        onclick="updateCurrentPrice('${String(item.id).replace(/'/g,"")}')"
+                    >
+                        💹 Price
+                    </button>
+                </td>
+
+            `;
+
+
+            body.appendChild(
+                row
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   INVESTMENT P/L
+========================================================= */
+
+function investmentPL(item){
+
+    const invested =
+        Number(
+            item.total
+        ) || 0;
+
+    const current =
+        Number(
+            item.currentValue
+        ) || invested;
+
+    return current - invested;
+}
+
+function investmentPLPercent(item){
+
+    const invested =
+        Number(
+            item.total
+        ) || 0;
+
+    if(!invested)
+        return 0;
+
+    return (
+        investmentPL(item) /
+        invested
+    ) * 100;
+}
+
+function investmentPLBadge(item){
+
+    const pl =
+        investmentPL(item);
+
+    const pct =
+        investmentPLPercent(item);
+
+    const color =
+        pl >= 0
+        ? "var(--green)"
+        : "var(--red)";
+
+    const sign =
+        pl > 0 ? "+" : "";
+
+    return `
+        <span style="color:${color};font-weight:800">
+            ${sign}${money(pl)}
+            <small>
+                (${sign}${pct.toFixed(2)}%)
+            </small>
+        </span>
+    `;
+}
+
+function updateCurrentPrice(id){
+
+    const item =
+        data.investments.find(
+            x =>
+                String(x.id) ===
+                String(id)
+        );
+
+    if(!item)
+        return;
+
+    const oldPrice =
+        Number(
+            item.currentPrice
+        ) ||
+        (
+            Number(item.currentValue) /
+            Math.max(
+                Number(item.qty) || 1,
+                1
+            )
+        ) ||
+        Number(item.price) ||
+        0;
+
+    const value =
+        prompt(
+            `Enter latest/current price for ${item.stock}:`,
+            oldPrice.toFixed(2)
+        );
+
+    if(
+        value === null
+    )
+        return;
+
+    const price =
+        Number(value);
+
+    if(
+        !Number.isFinite(price) ||
+        price <= 0
+    ){
+        toast(
+            "❌ Enter a valid current price."
+        );
+        return;
+    }
+
+    item.currentPrice =
+        price;
+
+    item.currentValue =
+        (
+            Number(item.qty) || 0
+        ) * price;
+
+    item.updatedAt =
+        new Date()
+        .toISOString();
+
+    saveData();
+
+    renderDashboard();
+
+    renderHistory();
+
+    toast(
+        "✅ Current price and P/L updated."
+    );
+}
+
+
+/* =========================================================
+   STATUS BADGE
+========================================================= */
+
+function statusBadge(
+    status
+){
+
+    let cls =
+        "status ";
+
+
+    if(
+        status === "ADD"
+    ){
+
+        cls +=
+            "status-add";
+
+    }
+    else if(
+        status === "HOLD"
+    ){
+
+        cls +=
+            "status-hold";
+
+    }
+    else if(
+        status === "CAUTION"
+    ){
+
+        cls +=
+            "status-caution";
+
+    }
+    else if(
+        status === "WAIT" ||
+        status === "NO ADD"
+    ){
+
+        cls +=
+            "status-wait";
+
+    }
+    else{
+
+        cls +=
+            "status-review";
+
+    }
+
+
+    return `
+
+        <span class="${cls}">
+            ${safe(status)}
+        </span>
+
+    `;
+
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+function formatDate(
+    value
+){
+
+    if(!value)
+        return "-";
+
+
+    return new Date(
+        value
+    ).toLocaleString(
+        "en-IN",
+        {
+            dateStyle:"medium",
+            timeStyle:"short"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   SAFE TEXT
+========================================================= */
+
+function safe(
+    value
+){
+
+    return String(
+        value
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+   DIVIDEND
+========================================================= */
+
+function saveDividend(){
+
+    const stock =
+        document
+        .getElementById(
+            "divStock"
+        )
+        .value;
+
+
+    const amount =
+        Number(
+            document
+            .getElementById(
+                "divAmount"
+            )
+            .value
+        );
+
+
+    const date =
+        document
+        .getElementById(
+            "divDate"
+        )
+        .value;
+
+
+    const reinvest =
+        document
+        .getElementById(
+            "divReinvest"
+        )
+        .value;
+
+
+    if(
+        !amount ||
+        amount <= 0
+    ){
+
+        toast(
+            "❌ Enter dividend amount."
+        );
+
+        return;
+
+    }
+
+
+    if(!date){
+
+        toast(
+            "❌ Select dividend date."
+        );
+
+        return;
+
+    }
+
+
+    data.dividends.push({
+
+        id:
+            Date.now(),
+
+        stock:
+            stock,
+
+        amount:
+            amount,
+
+        date:
+            date,
+
+        reinvest:
+            reinvest,
+
+        createdAt:
+            new Date()
+            .toISOString()
+
+    });
+
+
+    saveData();
+
+
+    document
+    .getElementById(
+        "divAmount"
+    )
+    .value = "";
+
+
+    toast(
+        "💰 Dividend saved."
+    );
+
+
+    renderDividends();
+
+}
+
+
+function renderDividends(){
+
+    const total =
+        data.dividends
+        .reduce(
+            (sum,item)=>
+                sum +
+                Number(
+                    item.amount
+                ),
+            0
+        );
+
+
+    const reinvested =
+        data.dividends
+        .filter(
+            item =>
+                item.reinvest ===
+                "YES"
+        )
+        .reduce(
+            (sum,item)=>
+                sum +
+                Number(
+                    item.amount
+                ),
+            0
+        );
+
+
+    document
+    .getElementById(
+        "divTotal"
+    )
+    .textContent =
+        money(total);
+
+
+    document
+    .getElementById(
+        "divReinvested"
+    )
+    .textContent =
+        money(reinvested);
+
+
+    document
+    .getElementById(
+        "divCount"
+    )
+    .textContent =
+        data.dividends.length;
+
+
+    const list =
+        document
+        .getElementById(
+            "dividendList"
+        );
+
+
+    list.innerHTML = "";
+
+
+    if(
+        !data.dividends.length
+    ){
+
+        list.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    💰
+                </div>
+
+                No dividend records yet.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    [...data.dividends]
+    .reverse()
+    .forEach(
+        item => {
+
+            list.innerHTML += `
+
+                <div class="notification-box">
+
+                    <strong>
+                        ${safe(
+                            item.stock
+                        )}
+                    </strong>
+
+                    <div class="notification-date">
+
+                        ${safe(
+                            item.date
+                        )}
+
+                        •
+
+                        Reinvest:
+                        ${safe(
+                            item.reinvest
+                        )}
+
+                    </div>
+
+                    <div
+                        style="
+                        margin-top:7px;
+                        color:var(--green);
+                        font-weight:800;
+                        "
+                    >
+
+                        ${money(
+                            item.amount
+                        )}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+function saveNotification(){
+
+    const text =
+        document
+        .getElementById(
+            "notificationText"
+        )
+        .value
+        .trim();
+
+
+    if(!text){
+
+        toast(
+            "❌ Notification is empty."
+        );
+
+        return;
+
+    }
+
+
+    data.notifications.push({
+
+        id:
+            Date.now(),
+
+        text:
+            text,
+
+        createdAt:
+            new Date()
+            .toISOString()
+
+    });
+
+
+    saveData();
+
+
+    document
+    .getElementById(
+        "notificationText"
+    )
+    .value = "";
+
+
+    toast(
+        "🔔 Notification saved."
+    );
+
+
+    renderNotifications();
+
+}
+
+
+function renderNotifications(){
+
+    const list =
+        document
+        .getElementById(
+            "notificationList"
+        );
+
+
+    list.innerHTML = "";
+
+
+    if(
+        !data.notifications.length
+    ){
+
+        list.innerHTML = `
+
+            <div class="empty">
+
+                <div class="empty-icon">
+                    🔔
+                </div>
+
+                No notifications saved yet.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    [...data.notifications]
+    .reverse()
+    .forEach(
+        item => {
+
+            list.innerHTML += `
+
+                <div class="notification-box">
+
+                    <div class="notification-date">
+
+                        ${formatDate(
+                            item.createdAt
+                        )}
+
+                    </div>
+
+                    <div class="notification-text">
+
+                        ${safe(
+                            item.text
+                        )}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CSV EXPORT
+========================================================= */
+
+function exportCSV(){
+
+    if(
+        !data.investments.length
+    ){
+
+        toast(
+            "📭 No investment data to export."
+        );
+
+        return;
+
+    }
+
+
+    const headers = [
+
+        "Date",
+        "Stock/ETF",
+        "Quantity",
+        "Buy Price",
+        "Current Price",
+        "Total Invested",
+        "Current Value",
+        "P/L",
+        "P/L %",
+        "Status",
+        "Month",
+        "Remarks"
+
+    ];
+
+
+    const rows =
+        data.investments.map(
+            item => [
+
+                formatDate(
+                    item.createdAt
+                ),
+
+                item.stock,
+
+                item.qty,
+
+                item.price,
+
+                Number(item.currentPrice) ||
+                (
+                    Number(item.currentValue || item.total) /
+                    Math.max(Number(item.qty) || 1, 1)
+                ),
+
+                item.total,
+
+                Number(item.currentValue) ||
+                Number(item.total),
+
+                investmentPL(item),
+
+                investmentPLPercent(item).toFixed(2),
+
+                item.status,
+
+                item.month,
+
+                item.remarks || ""
+
+            ]
+        );
+
+
+    let csv =
+        headers.join(",") +
+        "\n";
+
+
+    rows.forEach(
+        row => {
+
+            csv +=
+
+                row.map(
+                    value =>
+                        `"${String(value)
+                        .replace(
+                            /"/g,
+                            '""'
+                        )}"`
+                )
+                .join(",") +
+                "\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type:
+                    "text/csv;charset=utf-8;"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "Only_My_Portfolio_Investment_History.csv";
+
+
+    link.click();
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+
+    toast(
+        "📤 CSV exported."
+    );
+
+}
+
+
+/* =========================================================
+   SIP CALCULATOR
+========================================================= */
+
+function calculateSIP(){
+
+    const current =
+        Number(
+            document
+            .getElementById(
+                "sipCurrent"
+            )
+            .value
+        );
+
+
+    const step =
+        Number(
+            document
+            .getElementById(
+                "sipStep"
+            )
+            .value
+        );
+
+
+    const years =
+        Number(
+            document
+            .getElementById(
+                "sipYear"
+            )
+            .value
+        );
+
+
+    if(
+        current <= 0 ||
+        years < 1
+    ){
+
+        return;
+
+    }
+
+
+    const result =
+        current *
+        Math.pow(
+            1 +
+            step / 100,
+            years
+        );
+
+
+    document
+    .getElementById(
+        "sipResult"
+    )
+    .innerHTML = `
+
+        <span>
+            Year ${years} Monthly SIP
+        </span>
+
+        <strong>
+            ${money(result)}
+        </strong>
+
+    `;
+
+}
+
+
+/* =========================================================
+   BACKUP
+========================================================= */
+
+function backupData(){
+
+    const backup =
+        JSON.stringify(
+            data,
+            null,
+            2
+        );
+
+
+    const blob =
+        new Blob(
+            [backup],
+            {
+                type:
+                    "application/json"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const link =
+        document.createElement(
+            "a"
+        );
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "Only_My_Portfolio_Backup.json";
+
+
+    link.click();
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+
+    toast(
+        "💾 Backup downloaded."
+    );
+
+}
+
+
+/* =========================================================
+   RESTORE
+========================================================= */
+
+function restoreData(
+    event
+){
+
+    const file =
+        event.target.files[0];
+
+
+    if(!file)
+        return;
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(){
+
+            try{
+
+                const restored =
+                    JSON.parse(
+                        reader.result
+                    );
+
+
+                if(
+                    !restored ||
+                    typeof restored !==
+                    "object"
+                ){
+
+                    throw new Error();
+
+                }
+
+
+                data =
+                    restored;
+
+
+                saveData();
+
+
+                toast(
+                    "✅ Data restored."
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        location.reload();
+
+                    },
+                    800
+                );
+
+            }
+
+            catch{
+
+                toast(
+                    "❌ Invalid backup file."
+                );
+
+            }
+
+        };
+
+
+    reader.readAsText(
+        file
+    );
+
+}
+
+
+/* =========================================================
+   CLEAR ALL
+========================================================= */
+
+async function clearAllData(){
+
+    const answer =
+        confirm(
+            "This will permanently delete all portfolio data from this browser and Firebase. Continue?"
+        );
+
+    if(!answer)
+        return;
+
+    try{
+        await clearCloudData();
+    }
+    catch(error){
+        console.error(
+            "Cloud clear failed:",
+            error
+        );
+    }
+
+    localStorage.removeItem(
+        STORAGE_KEY
+    );
+
+    location.reload();
+
+}
+
+
+</script>
+
+</body>
+</html>
